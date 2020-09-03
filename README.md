@@ -1,5 +1,5 @@
 # Template:
-[![<ORG_NAME>](https://circleci.com/project/github/SailakshmiKumar/mssc-brewery.svg?style=svg)](https://app.circleci.com/pipelines/github/SailakshmiKumar/mssc-brewery)
+[![<CircleCI>](https://circleci.com/github/SailakshmiKumar/mssc-brewery.svg?style=svg)](https://app.circleci.com/pipelines/github/SailakshmiKumar/mssc-brewery)
 
 
 # Microservice using Spring Boot 
