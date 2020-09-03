@@ -3,6 +3,7 @@ package com.beer.msscbrewery.web.controller;
 
 import com.beer.msscbrewery.web.model.BeerDTO;
 import com.beer.msscbrewery.web.service.BeerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,15 +14,12 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @RequestMapping("api/v1/beer")
 @RestController
 public class BeerController {
 
     private final BeerService beerService;
-
-    public BeerController(BeerService beerService) {
-        this.beerService = beerService;
-    }
 
     @GetMapping("/{beerId}")
     public ResponseEntity<BeerDTO> getBeer(@PathVariable("beerId") UUID beerId) {
@@ -48,10 +46,12 @@ public class BeerController {
         beerService.deleteById(beerId);
     }
 
+/*
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity handleMismatchException(MethodArgumentNotValidException ex){
         return new ResponseEntity(HttpStatus.FORBIDDEN);
     }
+*/
 
 
 }

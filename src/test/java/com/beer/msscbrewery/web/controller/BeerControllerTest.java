@@ -36,7 +36,6 @@ public class BeerControllerTest {
     @InjectMocks
     BeerController beerController;
 
-    @Autowired
     MockMvc mockMvc;
 
     @Autowired
@@ -45,8 +44,12 @@ public class BeerControllerTest {
 
     @BeforeEach
     public void setUp() {
+
+        // set Controller advice in standalone Mock mvc builder with Exception Handler to enable testing for
+        // error handling from Controller advice
         mockMvc = MockMvcBuilders
                 .standaloneSetup(beerController)
+                .setControllerAdvice(new MVCExceptionHandler())
                 .build();
         objectMapper = new ObjectMapper();
     }
@@ -95,13 +98,6 @@ public class BeerControllerTest {
                 .andExpect(status().isNoContent());
     }
 
-
-    /**
-     * This test works fine only if @ExceptionHandler is within the Controller class
-     * If its placed in a separate place using @ControllerAdvice , it does not detect the error
-     * Need to check if mocks are missing
-     * @throws Exception
-     */
     @Test
     void updateBeerByIdForErrorScenario() throws Exception{
         BeerDTO beerDto = BeerDTO

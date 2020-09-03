@@ -30,9 +30,8 @@ public class MVCExceptionHandler {
 
 
     /**
-     * This works fine from Controller class and 403 gets returned as
-     * expected while testing via postman.
-     * Other error codes highlighted above does not work with Controller errors
+     * Only this exception is tested through Local and Unit testing
+     *
      * @param ex
      * @return
      */
