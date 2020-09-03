@@ -88,9 +88,11 @@
 				<version>3.8.1</version>
 				<configuration>
 					<annotationProcessorPaths>
+						<!-- This is required to generated impl classes for Mapper in Target under annotations folder
+						otherwise Maven compiler will not generate Mapper Impl -->
 						<path>
 							<groupId>org.mapstruct</groupId>
-							<artifactId>mapstruct</artifactId>
+							<artifactId>mapstruct-processor</artifactId>
 							<version>${mapstruct.version}</version>
 						</path>
 						<path>
