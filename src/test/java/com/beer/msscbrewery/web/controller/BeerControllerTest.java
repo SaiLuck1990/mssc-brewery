@@ -98,7 +98,7 @@ public class BeerControllerTest {
 
     /**
      * This test works fine only if @ExceptionHandler is within the Controller class
-     * If its placed in a separate place using @ControllerAdvice , it does not deduct the error
+     * If its placed in a separate place using @ControllerAdvice , it does not detect the error
      * Need to check if mocks are missing
      * @throws Exception
      */
